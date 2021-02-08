@@ -14,6 +14,7 @@ import 'package:creative1/pages/page_15.dart';
 import 'package:creative1/pages/page_16.dart';
 import 'package:creative1/pages/page_17.dart';
 import 'package:creative1/pages/page_18_19.dart';
+import 'package:creative1/pages/bookmarks.dart';
 import 'package:creative1/pages/start_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -53,12 +54,7 @@ class Lesson1App extends StatelessWidget {
         PageSixteen.routeName: (context) => PageSixteen(),
         PageSeventeen.routeName: (context) => PageSeventeen(),
         PageEighteenNineteen.routeName: (context) => PageEighteenNineteen(),
-        /*ImageScreen.routeName: (context) => ImageScreen(),
-        ButtonScreen.routeName: (contect) => ButtonScreen(),
-        FontScreen.routeName: (contect) => FontScreen(),
-        RowColScreen.routeName: (context) => RowColScreen(),
-        ExpandedWidgetScreen.routeName: (context) => ExpandedWidgetScreen(),
-        BusinessCardScreen.routeName: (context) => BusinessCardScreen(),*/
+        Bookmarks.routeName: (context) => Bookmarks(),
       },
     );
   }

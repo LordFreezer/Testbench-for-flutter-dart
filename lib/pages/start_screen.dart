@@ -1,3 +1,4 @@
+import 'package:creative1/pages/bookmarks.dart';
 import 'package:creative1/pages/page_1.dart';
 import 'package:flutter/material.dart';
 
@@ -7,30 +8,25 @@ class StartScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Start Menu'),
-        actions: [
-          /* IconButton(
-              icon: Icon(Icons.alarm),
-              onPressed: () {
-                print('Alarm');
-              }),
-          IconButton(
+
+        /*IconButton(
               icon: Icon(Icons.message_sharp),
               onPressed: () {
                 print('Message');
               }),*/
-        ],
       ),
       drawer: Drawer(
         child: ListView(
           children: [
-            /* DrawerHeader(
-              child: Text('Drawer Header'),
+            DrawerHeader(
+              child: Text("Chad's Manga Reader"),
             ),
             ListTile(
-              leading: Icon(Icons.message),
-              title: Text('Message'),
+              leading: Icon(Icons.bookmark),
+              title: Text('Bookmarks'),
+              onTap: () => Navigator.pushNamed(context, Bookmarks.routeName),
             ),
-            ListTile(
+            /*ListTile(
               leading: Icon(Icons.account_circle),
               title: Text('Profile'),
             ),
@@ -47,13 +43,12 @@ class StartScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            RaisedButton(
+            IconButton(
+              icon: Image.asset('images/Vol26.png'),
+              iconSize: 300,
               onPressed: () => Navigator.pushNamed(context, PageOne.routeName),
-              child: Text(
-                'Naruto',
-                style: Theme.of(context).textTheme.button,
-              ),
             ),
+
             /*RaisedButton(
               onPressed: () =>
                   Navigator.pushNamed(context, ImageScreen.routeName),
