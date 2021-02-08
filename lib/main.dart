@@ -11,6 +11,9 @@ import 'package:creative1/pages/page_10_11.dart';
 import 'package:creative1/pages/page_13.dart';
 import 'package:creative1/pages/page_14.dart';
 import 'package:creative1/pages/page_15.dart';
+import 'package:creative1/pages/page_16.dart';
+import 'package:creative1/pages/page_17.dart';
+import 'package:creative1/pages/page_18_19.dart';
 import 'package:creative1/pages/start_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -47,6 +50,9 @@ class Lesson1App extends StatelessWidget {
         PageThirteen.routeName: (context) => PageThirteen(),
         PageFourteen.routeName: (context) => PageFourteen(),
         PageFifteen.routeName: (context) => PageFifteen(),
+        PageSixteen.routeName: (context) => PageSixteen(),
+        PageSeventeen.routeName: (context) => PageSeventeen(),
+        PageEighteenNineteen.routeName: (context) => PageEighteenNineteen(),
         /*ImageScreen.routeName: (context) => ImageScreen(),
         ButtonScreen.routeName: (contect) => ButtonScreen(),
         FontScreen.routeName: (contect) => FontScreen(),
