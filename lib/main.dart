@@ -5,6 +5,7 @@ Here is the link:
 https://stackoverflow.com/questions/60204360/passing-variables-between-two-classes-in-flutter
 */
 
+import 'package:creative1/donation.dart';
 import 'package:creative1/pages/page_6_7.dart';
 import 'package:creative1/pages/page_1.dart';
 import 'package:creative1/pages/page_2.dart';
@@ -62,6 +63,7 @@ class MangaApp extends StatelessWidget {
         PageSeventeen.routeName: (context) => PageSeventeen(),
         PageEighteenNineteen.routeName: (context) => PageEighteenNineteen(),
         Bookmarks.routeName: (context) => Bookmarks(),
+        Donation.routeName: (context) => Donation(),
       },
     );
   }

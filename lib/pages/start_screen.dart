@@ -1,3 +1,4 @@
+import 'package:creative1/donation.dart';
 import 'package:creative1/pages/bookmarks.dart';
 import 'package:creative1/pages/page_1.dart';
 import 'package:flutter/material.dart';
@@ -26,14 +27,11 @@ class StartScreen extends StatelessWidget {
               title: Text('Bookmarks'),
               onTap: () => Navigator.pushNamed(context, Bookmarks.routeName),
             ),
-            /*ListTile(
-              leading: Icon(Icons.account_circle),
-              title: Text('Profile'),
-            ),
             ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings'),
-            ),*/
+              leading: Icon(Icons.money),
+              title: Text('Buy me a coffee'),
+              onTap: () => Navigator.pushNamed(context, Donation.routeName),
+            ),
           ],
         ),
       ),
@@ -48,78 +46,9 @@ class StartScreen extends StatelessWidget {
               iconSize: 300,
               onPressed: () => Navigator.pushNamed(context, PageOne.routeName),
             ),
-
-            /*RaisedButton(
-              onPressed: () =>
-                  Navigator.pushNamed(context, ImageScreen.routeName),
-              child: Text(
-                'Image Demo Screen',
-                style: Theme.of(context).textTheme.button,
-              ),
-            ),
-            RaisedButton(
-              onPressed: () =>
-                  Navigator.pushNamed(context, ButtonScreen.routeName),
-              child: Text(
-                'Button Demo',
-                style: Theme.of(context).textTheme.button,
-              ),
-            ),
-            RaisedButton(
-              onPressed: () =>
-                  Navigator.pushNamed(context, FontScreen.routeName),
-              child: Text(
-                'Custom Font Demo',
-                style: Theme.of(context).textTheme.button,
-              ),
-            ),
-            RaisedButton(
-              onPressed: () =>
-                  Navigator.pushNamed(context, RowColScreen.routeName),
-              child: Text(
-                'Row/Column Layout Demo',
-                style: Theme.of(context).textTheme.button,
-              ),
-            ),
-            RaisedButton(
-              onPressed: () =>
-                  Navigator.pushNamed(context, ExpandedWidgetScreen.routeName),
-              child: Text(
-                'Expended Widget Screen Demo',
-                style: Theme.of(context).textTheme.button,
-              ),
-            ),
-            RaisedButton(
-              onPressed: () =>
-                  Navigator.pushNamed(context, BusinessCardScreen.routeName),
-              child: Text(
-                'Business card demo',
-                style: Theme.of(context).textTheme.button,
-              ),
-            ),*/
           ],
         ),
       ),
-      /*floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          print("Floating Action Button");
-        },
-        child: Icon(Icons.star_outline),
-      ),*/
-      /* bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.business), label: 'Business'),
-        ],
-        currentIndex: 0,
-        onTap: (index) {
-          print('Current index = $index');
-        },
-      ),*/
     );
   }
 }
