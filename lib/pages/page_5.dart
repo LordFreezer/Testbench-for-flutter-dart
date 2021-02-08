@@ -1,20 +1,20 @@
-import 'package:creative1/pages/page_1.dart';
-import 'package:creative1/pages/page_3.dart';
+import 'package:creative1/pages/page_4.dart';
+import 'package:creative1/pages/page_6_7.dart';
 import 'package:flutter/material.dart';
 
-class PageTwo extends StatelessWidget {
-  static const routeName = '/p2';
+class PageFive extends StatelessWidget {
+  static const routeName = '/p5';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Chapter 232 - Page 2'),
+        title: Text('Chapter 232 - Page 5'),
       ),
       body: SingleChildScrollView(
         child: Container(
           child: Stack(
             children: [
-              Image.asset('images/naruto_ch232_p02.jpg'),
+              Image.asset('images/naruto_ch232_p05.jpg'),
               Positioned(
                 top: 250,
                 right: 10,
@@ -23,7 +23,7 @@ class PageTwo extends StatelessWidget {
                   color: Colors.red,
                   icon: Icon(Icons.arrow_right),
                   onPressed: () =>
-                      Navigator.pushNamed(context, PageThree.routeName),
+                      Navigator.pushNamed(context, PageSix_Seven.routeName),
                 ),
               ),
               Positioned(
@@ -34,7 +34,7 @@ class PageTwo extends StatelessWidget {
                   color: Colors.red,
                   icon: Icon(Icons.arrow_left),
                   onPressed: () =>
-                      Navigator.pushNamed(context, PageOne.routeName),
+                      Navigator.pushNamed(context, PageFour.routeName),
                 ),
               ),
             ],
