@@ -42,7 +42,7 @@ class PageFive extends StatelessWidget {
                   color: Colors.red,
                   icon: Icon(Icons.arrow_right),
                   onPressed: () =>
-                      Navigator.pushNamed(context, PageSix_Seven.routeName),
+                      Navigator.pushNamed(context, PageSixSeven.routeName),
                 ),
               ),
               Positioned(

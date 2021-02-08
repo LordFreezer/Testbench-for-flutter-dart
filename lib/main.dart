@@ -1,3 +1,10 @@
+/*
+I borrowed the use of a constructor to create an instance of my Bookmark page
+without my classes extending into stateful.
+Here is the link:
+https://stackoverflow.com/questions/60204360/passing-variables-between-two-classes-in-flutter
+*/
+
 import 'package:creative1/pages/page_6_7.dart';
 import 'package:creative1/pages/page_1.dart';
 import 'package:creative1/pages/page_2.dart';
@@ -19,10 +26,10 @@ import 'package:creative1/pages/start_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(Lesson1App());
+  runApp(MangaApp());
 }
 
-class Lesson1App extends StatelessWidget {
+class MangaApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -43,7 +50,7 @@ class Lesson1App extends StatelessWidget {
         PageThree.routeName: (context) => PageThree(),
         PageFour.routeName: (context) => PageFour(),
         PageFive.routeName: (context) => PageFive(),
-        PageSix_Seven.routeName: (context) => PageSix_Seven(),
+        PageSixSeven.routeName: (context) => PageSixSeven(),
         PageEight.routeName: (context) => PageEight(),
         PageNine.routeName: (context) => PageNine(),
         PageTenEleven.routeName: (context) => PageTenEleven(),

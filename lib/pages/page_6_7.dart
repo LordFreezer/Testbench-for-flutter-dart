@@ -4,7 +4,7 @@ import 'package:creative1/pages/page_8.dart';
 import 'package:creative1/pages/start_screen.dart';
 import 'package:flutter/material.dart';
 
-class PageSix_Seven extends StatelessWidget {
+class PageSixSeven extends StatelessWidget {
   static const routeName = '/p6_7';
   static const title_1 = 'Chapter 232 - Page 6 & 7';
   @override
