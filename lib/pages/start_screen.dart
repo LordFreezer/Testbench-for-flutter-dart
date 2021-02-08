@@ -8,7 +8,7 @@ class StartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Start Menu'),
+        title: Text("Big 5 of October 2004", style: TextStyle(fontSize: 20)),
       ),
       drawer: Drawer(
         child: ListView(
@@ -33,39 +33,53 @@ class StartScreen extends StatelessWidget {
         child: Container(
           width: MediaQuery.of(context).size.width,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            // mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
+
             children: [
-              Text("Big 5 of October 2004", style: TextStyle(fontSize: 30)),
-              IconButton(
-                icon: Image.asset('images/Vol26.png'),
-                iconSize: 200,
-                onPressed: () =>
-                    Navigator.pushNamed(context, PageOne.routeName),
-              ),
-              IconButton(
-                icon: Image.network(
-                    'https://static.wikia.nocookie.net/bleach/images/7/75/MangaVolume3Cover.png/revision/latest/scale-to-width-down/759?cb=20190731054852&path-prefix=en'),
-                iconSize: 200,
-                onPressed: () => {},
-              ),
-              IconButton(
-                icon: Image.network(
-                    'https://static.wikia.nocookie.net/hunterxhunter/images/7/73/Volume20cover.jpg/revision/latest/scale-to-width-down/752?cb=20170803090038'),
-                iconSize: 200,
-                onPressed: () => {},
-              ),
-              IconButton(
-                icon: Image.network(
-                    'https://static.wikia.nocookie.net/dragonball/images/0/0b/DBJ29.jpg/revision/latest/scale-to-width-down/200?cb=20130226151215'),
-                iconSize: 200,
-                onPressed: () => {},
-              ),
-              IconButton(
-                icon: Image.network(
-                    'https://static.wikia.nocookie.net/onepiece/images/6/65/Volume_35.png/revision/latest/scale-to-width-down/753?cb=20130115023232'),
-                iconSize: 200,
-                onPressed: () => {},
+              Wrap(
+                children: [
+                  Container(
+                    child: IconButton(
+                      icon: Image.asset('images/Vol26.png'),
+                      iconSize: 185,
+                      onPressed: () =>
+                          Navigator.pushNamed(context, PageOne.routeName),
+                    ),
+                  ),
+                  Container(
+                    child: IconButton(
+                      icon: Image.network(
+                          'https://static.wikia.nocookie.net/bleach/images/7/75/MangaVolume3Cover.png/revision/latest/scale-to-width-down/759?cb=20190731054852&path-prefix=en'),
+                      iconSize: 185,
+                      onPressed: () => {},
+                    ),
+                  ),
+                  Container(
+                    child: IconButton(
+                      icon: Image.network(
+                          'https://static.wikia.nocookie.net/hunterxhunter/images/7/73/Volume20cover.jpg/revision/latest/scale-to-width-down/752?cb=20170803090038'),
+                      iconSize: 185,
+                      onPressed: () => {},
+                    ),
+                  ),
+                  Container(
+                    child: IconButton(
+                      icon: Image.network(
+                          'https://static.wikia.nocookie.net/dragonball/images/0/0b/DBJ29.jpg/revision/latest/scale-to-width-down/200?cb=20130226151215'),
+                      iconSize: 185,
+                      onPressed: () => {},
+                    ),
+                  ),
+                  Container(
+                    child: IconButton(
+                      icon: Image.network(
+                          'https://static.wikia.nocookie.net/onepiece/images/6/65/Volume_35.png/revision/latest/scale-to-width-down/753?cb=20130115023232'),
+                      iconSize: 185,
+                      onPressed: () => {},
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
