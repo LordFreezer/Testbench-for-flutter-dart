@@ -10,33 +10,36 @@ class Donation extends StatelessWidget {
         title: Text(title_1),
         actions: [],
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          child: Column(
-            children: [
-              RaisedButton(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              child: IconButton(
+                icon: Image.network(
+                    'https://newsroom.mastercard.com/wp-content/uploads/2016/09/paypal-logo.png'),
                 onPressed: () => {},
-                child: Text(
-                  'Paypal',
-                  style: Theme.of(context).textTheme.button,
-                ),
+                iconSize: 150,
               ),
-              RaisedButton(
+            ),
+            Container(
+              child: IconButton(
+                icon: Image.network(
+                    'https://www.lmaic.com/wp-content/uploads/2020/04/cash-app-png-1.png'),
                 onPressed: () => {},
-                child: Text(
-                  'CashApp',
-                  style: Theme.of(context).textTheme.button,
-                ),
+                iconSize: 170,
               ),
-              RaisedButton(
+            ),
+            Container(
+              child: IconButton(
+                icon: Image.network(
+                    'https://www.coindesk.com/wp-content/uploads/2019/03/Screen-Shot-2019-03-18-at-4.40.13-PM.png'),
                 onPressed: () => {},
-                child: Text(
-                  'Bitcoin',
-                  style: Theme.of(context).textTheme.button,
-                ),
+                iconSize: 150,
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
