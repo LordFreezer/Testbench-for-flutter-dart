@@ -35,7 +35,6 @@ class StartScreen extends StatelessWidget {
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
-
             children: [
               Wrap(
                 children: [
