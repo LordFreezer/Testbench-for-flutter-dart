@@ -1,10 +1,30 @@
 import 'package:creative1/donation.dart';
+import 'package:creative1/model/pages.dart';
 import 'package:creative1/pages/bookmarks.dart';
-import 'package:creative1/pages/page_1.dart';
+import 'package:creative1/pages/page_screen.dart';
 import 'package:flutter/material.dart';
 
-class StartScreen extends StatelessWidget {
+class StartScreen extends StatefulWidget {
   static const routeName = '/startScreen';
+  @override
+  State<StatefulWidget> createState() {
+    return _StartScreenState();
+  }
+}
+
+class _StartScreenState extends State<StartScreen> {
+  _Controller con;
+  int index = 0;
+  @override
+  void initState() {
+    super.initState();
+    con = _Controller(this);
+  }
+
+  void render(fn) {
+    setState(fn);
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -32,58 +52,31 @@ class StartScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Container(
           width: MediaQuery.of(context).size.width,
-          child: Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Wrap(
-                children: [
-                  Container(
-                    child: IconButton(
-                      icon: Image.asset('images/Vol26.png'),
-                      iconSize: 185,
-                      onPressed: () =>
-                          Navigator.pushNamed(context, PageOne.routeName),
-                    ),
-                  ),
-                  Container(
-                    child: IconButton(
-                      icon: Image.network(
-                          'https://static.wikia.nocookie.net/bleach/images/7/75/MangaVolume3Cover.png/revision/latest/scale-to-width-down/759?cb=20190731054852&path-prefix=en'),
-                      iconSize: 185,
-                      onPressed: () => {},
-                    ),
-                  ),
-                  Container(
-                    child: IconButton(
-                      icon: Image.network(
-                          'https://static.wikia.nocookie.net/hunterxhunter/images/7/73/Volume20cover.jpg/revision/latest/scale-to-width-down/752?cb=20170803090038'),
-                      iconSize: 185,
-                      onPressed: () => {},
-                    ),
-                  ),
-                  Container(
-                    child: IconButton(
-                      icon: Image.network(
-                          'https://static.wikia.nocookie.net/dragonball/images/0/0b/DBJ29.jpg/revision/latest/scale-to-width-down/200?cb=20130226151215'),
-                      iconSize: 185,
-                      onPressed: () => {},
-                    ),
-                  ),
-                  Container(
-                    child: IconButton(
-                      icon: Image.network(
-                          'https://static.wikia.nocookie.net/onepiece/images/6/65/Volume_35.png/revision/latest/scale-to-width-down/753?cb=20130115023232'),
-                      iconSize: 185,
-                      onPressed: () => {},
-                    ),
-                  ),
-                ],
-              ),
-            ],
+          child: Wrap(
+            // crossAxisAlignment: CrossAxisAlignment.center,
+            children: con.getChapterList(),
           ),
         ),
       ),
     );
+  }
+}
+
+class _Controller {
+  _StartScreenState state;
+  _Controller(this.state);
+
+  List<Widget> getChapterList() {
+    return chapters.map(
+      (chapter) {
+        return IconButton(
+            icon: Image.network(chapter.coverImage),
+            iconSize: 185,
+            onPressed: () {
+              Navigator.pushNamed(state.context, PageScreen.routeName,
+                  arguments: Args(chapter.name));
+            });
+      },
+    ).toList();
   }
 }

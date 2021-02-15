@@ -6,23 +6,8 @@ https://stackoverflow.com/questions/60204360/passing-variables-between-two-class
 */
 
 import 'package:creative1/donation.dart';
-import 'package:creative1/pages/page_6_7.dart';
-import 'package:creative1/pages/page_1.dart';
-import 'package:creative1/pages/page_2.dart';
-import 'package:creative1/pages/page_3.dart';
-import 'package:creative1/pages/page_4.dart';
-import 'package:creative1/pages/page_5.dart';
-import 'package:creative1/pages/page_8.dart';
-import 'package:creative1/pages/page_9.dart';
-import 'package:creative1/pages/page_12.dart';
-import 'package:creative1/pages/page_10_11.dart';
-import 'package:creative1/pages/page_13.dart';
-import 'package:creative1/pages/page_14.dart';
-import 'package:creative1/pages/page_15.dart';
-import 'package:creative1/pages/page_16.dart';
-import 'package:creative1/pages/page_17.dart';
-import 'package:creative1/pages/page_18_19.dart';
 import 'package:creative1/pages/bookmarks.dart';
+import 'package:creative1/pages/page_screen.dart';
 import 'package:creative1/pages/start_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -46,24 +31,9 @@ class MangaApp extends StatelessWidget {
       initialRoute: StartScreen.routeName,
       routes: {
         StartScreen.routeName: (context) => StartScreen(),
-        PageOne.routeName: (context) => PageOne(),
-        PageTwo.routeName: (context) => PageTwo(),
-        PageThree.routeName: (context) => PageThree(),
-        PageFour.routeName: (context) => PageFour(),
-        PageFive.routeName: (context) => PageFive(),
-        PageSixSeven.routeName: (context) => PageSixSeven(),
-        PageEight.routeName: (context) => PageEight(),
-        PageNine.routeName: (context) => PageNine(),
-        PageTenEleven.routeName: (context) => PageTenEleven(),
-        PageTwelve.routeName: (context) => PageTwelve(),
-        PageThirteen.routeName: (context) => PageThirteen(),
-        PageFourteen.routeName: (context) => PageFourteen(),
-        PageFifteen.routeName: (context) => PageFifteen(),
-        PageSixteen.routeName: (context) => PageSixteen(),
-        PageSeventeen.routeName: (context) => PageSeventeen(),
-        PageEighteenNineteen.routeName: (context) => PageEighteenNineteen(),
         Bookmarks.routeName: (context) => Bookmarks(),
         Donation.routeName: (context) => Donation(),
+        PageScreen.routeName: (context) => PageScreen(),
       },
     );
   }
