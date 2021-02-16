@@ -10,9 +10,9 @@ class PageScreen extends StatefulWidget {
   }
 }
 
-class Args {
+class ArgsPage {
   final String currentChapter;
-  Args(this.currentChapter);
+  ArgsPage(this.currentChapter);
   List getMember(String name) {
     if (name == 'narutoChapter232') return narutoChapter232;
     if (name == 'bleachChapter25') return bleachChapter25;
@@ -35,11 +35,19 @@ class _PageState extends State<PageScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final Args arg = ModalRoute.of(context).settings.arguments;
+    final ArgsPage arg = ModalRoute.of(context).settings.arguments;
+    String title_1 = arg.getMember(arg.currentChapter)[index].title;
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(arg.getMember(arg.currentChapter)[index].title),
+        title: Text(title_1),
+        actions: [
+          IconButton(
+              icon: Icon(Icons.bookmark),
+              onPressed: () => {
+                    bookmarks.add(arg.getMember(arg.currentChapter)[index]),
+                  }),
+        ],
       ),
       body: con.getPage(context, index),
     );
@@ -54,7 +62,8 @@ class _Controller {
   TapDownDetails _doubleTapDetails;
 
   Widget getPage(BuildContext context, int index) {
-    final Args arg = ModalRoute.of(context).settings.arguments;
+    final ArgsPage arg = ModalRoute.of(context).settings.arguments;
+
     return Stack(
       children: [
         GestureDetector(

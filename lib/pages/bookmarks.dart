@@ -1,39 +1,132 @@
 import 'package:creative1/pages/start_screen.dart';
+import 'package:creative1/pages/page_screen.dart';
+import 'package:creative1/model/pages.dart';
 import 'package:flutter/material.dart';
 
-class Bookmarks extends StatelessWidget {
+class Bookmarks extends StatefulWidget {
   static const routeName = '/bk';
 
-  final title_1;
+  @override
+  State<StatefulWidget> createState() {
+    return _BookmarksState();
+  }
+}
 
-  Bookmarks({Key key, this.title_1}) : super(key: key);
-
-  String nullMark() {
-    if (title_1 == null) {
-      return 'No Bookmarks';
-    }
-    return title_1;
+class _BookmarksState extends State<Bookmarks> {
+  _Controller con;
+  int index = 0;
+  @override
+  void initState() {
+    super.initState();
+    con = _Controller(this);
   }
 
-  @override
+  void render(fn) {
+    setState(fn);
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Bookmarks'),
-          actions: [
-            IconButton(
-              icon: Icon(Icons.home),
-              onPressed: () =>
-                  Navigator.pushNamed(context, StartScreen.routeName),
-            ),
-          ],
-        ),
-        body: RaisedButton(
-          onPressed: Navigator.of(context).pop,
-          child: Text(
-            nullMark(),
-            style: Theme.of(context).textTheme.button,
-          ),
-        ));
+      appBar: AppBar(
+        title: Text("Chad's Bookmarks"),
+        actions: con.selected != null
+            ? [
+                IconButton(
+                  icon: Icon(Icons.delete),
+                  onPressed: con.delete,
+                ),
+                IconButton(
+                  icon: Icon(Icons.cancel),
+                  onPressed: con.cancel,
+                ),
+              ]
+            : null,
+      ),
+      body: ListView.builder(
+        itemCount: bookmarks.length,
+        itemBuilder: con.getTile,
+      ),
+    );
+  }
+}
+
+class _Controller {
+  _BookmarksState state;
+  _Controller(this.state);
+  List<int> selected;
+  List<int> removedItems;
+  final Color selectedColor = Colors.indigo[500];
+  final Color unselectedColor = Colors.indigo[200];
+
+  Widget getTile(BuildContext context, int index) {
+    return Container(
+      color: (selected != null && selected.indexOf(index) >= 0)
+          ? selectedColor
+          : unselectedColor,
+      padding: EdgeInsets.all(10),
+      margin: EdgeInsets.all(10),
+      child: ListTile(
+        title: Text(bookmarks[index].title),
+        onTap: () {
+          _onTap(context, index);
+        },
+        onLongPress: () {
+          _longPress(context, index);
+        },
+      ),
+    );
+  }
+
+  void _onTap(BuildContext context, int index) {
+    if (selected == null) {
+      state.render(
+        () {},
+      );
+    } else {
+      state.render(() {
+        if (selected.indexOf(index) < 0) {
+          selected.add(index);
+        } else {
+          // cancels selection
+          selected.removeWhere((value) => value == index);
+          if (selected.length == 0) selected = null;
+        }
+      });
+    }
+  }
+
+  void _longPress(BuildContext context, int index) {
+    if (selected == null) {
+      state.render(() {
+        selected = [];
+        selected.add(index);
+      });
+    } else {
+      state.render(() {
+        if (selected.indexOf(index) < 0) {
+          selected.add(index);
+        } else {
+          // cancels selection
+          selected.removeWhere((value) => value == index);
+          if (selected.length == 0) selected = null;
+        }
+      });
+    }
+  }
+
+  void delete() {
+    selected.sort(); // ascending order
+    state.render(() {
+      for (int i = selected.length - 1; i >= 0; i--) {
+        bookmarks.removeAt(selected[i]);
+      }
+      selected = null;
+    });
+  }
+
+  void cancel() {
+    state.render(() {
+      selected = null;
+    });
   }
 }

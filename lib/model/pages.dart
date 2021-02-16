@@ -1,21 +1,15 @@
-class Page {
+class Page extends Chapter {
   String title, imageLoc;
-
-  Page({this.imageLoc, this.title});
+  int pageNum;
+  Page({this.imageLoc, this.title, this.pageNum});
 }
 
 class Chapter {
   String name;
   String coverImage;
+  int chapNum;
 
-  Chapter({this.name, this.coverImage});
-}
-
-class Series {
-  String name;
-  String coverImage;
-
-  Series({this.name, this.coverImage});
+  Chapter({this.name, this.coverImage, this.chapNum});
 }
 
 var narutoChapter232 = [
@@ -41,6 +35,8 @@ var bleachChapter25 = [
         'images/bleach25/bleach-1586061-c5a06fdd77e39057d8571e74c58433b7.jpg',
   ),
 ];
+
+var bookmarks = [];
 
 var chapters = [
   Chapter(
@@ -69,13 +65,3 @@ var chapters = [
         'https://static.wikia.nocookie.net/onepiece/images/6/65/Volume_35.png/revision/latest/scale-to-width-down/753?cb=20130115023232',
   ),
 ];
-
-/*
-  // implement this when you have full volumes  
-  var series = [
-  Series(
-    name: 'Naruto',
-    coverImage:
-        'https://occ-0-1009-1001.1.nflxso.net/dnm/api/v6/XsrytRUxks8BtTRf9HNlZkW2tvY/AAAABUsuJAhrY_O2wzX0YUuwOaWLp1Ee7D6O4oWe1spXrVKWGNywIhz6I9g5mitrlu1dh7Jw0dVzsZG3agmi_F1T4mMOxjYAhmhB4g.jpg',
-  ),
-];*/

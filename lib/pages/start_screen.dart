@@ -53,7 +53,6 @@ class _StartScreenState extends State<StartScreen> {
         child: Container(
           width: MediaQuery.of(context).size.width,
           child: Wrap(
-            // crossAxisAlignment: CrossAxisAlignment.center,
             children: con.getChapterList(),
           ),
         ),
@@ -74,7 +73,7 @@ class _Controller {
             iconSize: 185,
             onPressed: () {
               Navigator.pushNamed(state.context, PageScreen.routeName,
-                  arguments: Args(chapter.name));
+                  arguments: ArgsPage(chapter.name));
             });
       },
     ).toList();
