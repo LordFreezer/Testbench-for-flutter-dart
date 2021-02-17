@@ -51,10 +51,15 @@ class _PageState extends State<PageScreen> {
         actions: [
           IconButton(
               icon: Icon(Icons.bookmark),
-              onPressed: () => {
-                    // Adds the specific page to the list of book marks in datafil.
-                    bookmarks.add(arg.getMember(arg.currentChapter)[index]),
-                  }),
+              onPressed: () {
+                // Adds the specific page to the list of book marks in datafil.
+                Mark mark = new Mark();
+                // Note that this returns Page object
+                mark.page = arg.getMember(arg.currentChapter)[index];
+                mark.chapter = arg.currentChapter;
+
+                bookmarks.add(mark);
+              }),
         ],
       ),
       // Controls the list of pages for display.

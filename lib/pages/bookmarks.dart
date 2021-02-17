@@ -1,4 +1,3 @@
-import 'package:creative1/pages/start_screen.dart';
 import 'package:creative1/pages/page_screen.dart';
 import 'package:creative1/model/pages.dart';
 import 'package:flutter/material.dart';
@@ -66,7 +65,7 @@ class _Controller {
       padding: EdgeInsets.all(10),
       margin: EdgeInsets.all(10),
       child: ListTile(
-        title: Text(bookmarks[index].title),
+        title: Text('${bookmarks[index].page.title}'),
         onTap: () {
           _onTap(context, index);
         },
@@ -82,7 +81,8 @@ class _Controller {
       state.render(
         () {
           Navigator.pushNamed(state.context, PageScreen.routeName,
-              arguments: ArgsPage(chapters[0].name));
+              arguments:
+                  ArgsPage(bookmarks[index].chapter)); // big problem here
         },
       );
     } else {

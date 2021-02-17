@@ -7,7 +7,14 @@ https://stackoverflow.com/questions/65408346/flutter-enable-image-zoom-in-out-on
 To-Dos:
 
 Fix bookmark argument passing:
-  I need to be able to pass the chapter name to navigate to 
+  I need to be able to pass the page number so that when the
+  user taps on a bookmark, it goes straight to the page instead
+  of going to the beginning of the chapter.
+
+Remake back button:
+  I need to overload the backbutton when navigated from bookmarks
+  to the specific page so that when the user presses back, they will
+  go home instad of back to bookmarks
 
 
 */

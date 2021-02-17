@@ -1,13 +1,22 @@
-class Page extends Chapter {
+class Page {
   String title, imageLoc;
   Page({this.imageLoc, this.title});
 }
 
 class Chapter {
+  String series;
   String name;
   String coverImage;
 
   Chapter({this.name, this.coverImage});
+}
+
+class Mark {
+  Page page;
+  String chapter;
+  String series;
+
+  Mark({this.page, this.chapter, this.series});
 }
 
 var narutoChapter232 = [
