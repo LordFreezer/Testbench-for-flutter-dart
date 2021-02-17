@@ -1,8 +1,15 @@
 /*
-I borrowed the use of a constructor to create an instance of my Bookmark page
-without my classes extending into stateful.
-Here is the link:
-https://stackoverflow.com/questions/60204360/passing-variables-between-two-classes-in-flutter
+I borrowed the use of a GestureDetector to allow zoom by doubletap 
+and panning through InteractiveViewer
+
+https://stackoverflow.com/questions/65408346/flutter-enable-image-zoom-in-out-on-double-tap-using-interactiveviewer
+
+To-Dos:
+
+Fix bookmark argument passing:
+  I need to be able to pass the chapter name to navigate to 
+
+
 */
 
 import 'package:creative1/donation.dart';

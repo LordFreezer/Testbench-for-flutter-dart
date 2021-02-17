@@ -80,7 +80,10 @@ class _Controller {
   void _onTap(BuildContext context, int index) {
     if (selected == null) {
       state.render(
-        () {},
+        () {
+          Navigator.pushNamed(state.context, PageScreen.routeName,
+              arguments: ArgsPage(chapters[0].name));
+        },
       );
     } else {
       state.render(() {

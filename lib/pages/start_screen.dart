@@ -52,7 +52,9 @@ class _StartScreenState extends State<StartScreen> {
       body: SingleChildScrollView(
         child: Container(
           width: MediaQuery.of(context).size.width,
+          // I wrapped the list of chapters so that the entire screen is used
           child: Wrap(
+            // Controls the list of chapters for display.
             children: con.getChapterList(),
           ),
         ),
@@ -72,6 +74,8 @@ class _Controller {
             icon: Image.network(chapter.coverImage),
             iconSize: 185,
             onPressed: () {
+              // Navigates to whatever chapter the user selects based on the arguments passed.
+              // Notice that a String is being passed. This string is used in getMember
               Navigator.pushNamed(state.context, PageScreen.routeName,
                   arguments: ArgsPage(chapter.name));
             });
